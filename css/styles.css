@@ -1,0 +1,33 @@
+    .soon 
+    {
+    background: #eff2b7;
+    color: #f9885b;
+    font-weight: bold;
+    padding: 15px;
+    border: 2px solid #5a5c69;
+    border-radius: 6px;
+    text-align:center;
+    width: 97%;
+    margin: 20px; 
+    display: inline-block;
+    
+    }
+   
+    
+    /* COLORES DE LAS ALERTAS */
+    .alert {
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #d4d4d4;
+        border-radius: 5px;
+    }
+    .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+    .alert-error {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }

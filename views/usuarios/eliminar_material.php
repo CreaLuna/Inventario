@@ -1,0 +1,52 @@
+<?php
+//Buscamo el material base a un ID
+$id = $_GET['id'];
+require_once ("../../includes/_db.php");
+$consulta = "SELECT * FROM materiales WHERE Codigo_material = $id";
+$resultado = mysqli_query($conexion, $consulta);
+$categoria = mysqli_fetch_assoc($resultado);
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Material</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container mt-5">
+    <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+    <div class="alert alert-danger text-center">
+    <p>¿Desea confirmar la eliminacion del registro: "<?php
+    //Mostramos el nombre de la categoria a borrar
+     echo ($categoria ['Nombre_mate']);
+     ?> " ?</p>
+    <p>
+    <tr>
+    <td>
+    
+</td>
+</tr></p>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <form action="../../includes/_functions.php" method="POST">
+            <input type="hidden" name="accion" value="eliminar_material">
+            <!-- Enviamos la solicitud a la funcion -->
+            <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+            <input type="submit" name="" value="eliminar" class="btn btn-success">
+            <a href="materiales.php" class="btn btn-danger">cancelar</a>
+        </div>
+    </div>
+
+    
+</body>
+    </html>
